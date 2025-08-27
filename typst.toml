@@ -8,7 +8,6 @@ description = "A clean and professional CV template"
 repository = "https://github.com/garland-culbreth/typst-clean-cv"
 keywords = ["cv", "curriculum vitae", "curriculum vitæ", "resume", "résumé"]
 categories = ["cv"]
-exclude = ["static/*"]
 
 [template]
 path = "template"
