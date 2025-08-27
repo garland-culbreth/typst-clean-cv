@@ -1,0 +1,15 @@
+[package]
+name = "clean-cv"
+version = "0.1.0"
+entrypoint = "src/clean-cv.typ"
+authors = ["garland-culbreth"]
+license = "MIT"
+description = "A clean and professional CV template"
+repository = "https://github.com/garland-culbreth/typst-clean-cv"
+keywords = ["cv", "curriculum vitae", "curriculum vitæ", "resume", "résumé"]
+categories = ["cv"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "static/images/preview.png"
