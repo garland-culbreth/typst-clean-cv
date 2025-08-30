@@ -1,7 +1,7 @@
 [package]
 name = "clean-cv"
 version = "0.1.0"
-entrypoint = "src/clean-cv.typ"
+entrypoint = "src/lib.typ"
 authors = ["garland-culbreth"]
 license = "MIT"
 description = "A clean and professional CV template."

@@ -1,4 +1,4 @@
-#import "/src/clean-cv.typ": *
+#import "/src/lib.typ": *
 
 #show: clean_cv(
     name: "Your Name",
