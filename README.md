@@ -2,7 +2,7 @@
 
 A [typst](https://typst.app/) template for a clean curriculum vitae or resume.
 
-![example preview](./static/images/preview.png)
+![example preview](./thumbnail.png)
 
 ## Basic Usage
 
