@@ -12,4 +12,4 @@ categories = ["cv"]
 [template]
 path = "template"
 entrypoint = "main.typ"
-thumbnail = "static/images/preview.png"
+thumbnail = "thumbnail.png"
