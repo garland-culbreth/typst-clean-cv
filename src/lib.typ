@@ -21,9 +21,10 @@
     text_color: rgb("#002f55"),
     pad_above: 1em,
     pad_below: 0em,
+    letter_spacing: 0.5pt,
 ) = {
     block(above: pad_above, below: pad_below)[
-        #text(upper(name), weight: "bold", size: font_size, fill: text_color)
+        #text(upper(name), weight: "bold", size: font_size, fill: text_color, tracking: letter_spacing)
     ]
 }
 
