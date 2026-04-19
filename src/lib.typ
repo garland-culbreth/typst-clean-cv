@@ -154,7 +154,7 @@
     font_size: 9.5pt,
     text_color: rgb("#4c525b"),
     leading: 0.6em,
-    pad_between: 0.7em,
+    pad_between: 0.8em,
 ) = {
     set text(style: "normal", size: font_size, fill: text_color)
     set par(leading: leading)
