@@ -13,18 +13,18 @@
 ///
 /// - name (string): Your name.
 /// - font_size (length | text.size): Size of the name text.
-/// - text_color (color): Color to give the name text.
+/// - font_color (color): Color to give the name text.
 /// - pad_above (auto | fraction | length | relative): Space to insert or remove above the block. Useful for vertical alignment.
 #let name_block(
     name: "Your name",
     font_size: 24pt,
-    text_color: rgb("#002f55"),
+    font_color: rgb("#002f55"),
     pad_above: 1em,
     pad_below: 0em,
     letter_spacing: 0.5pt,
 ) = {
     block(above: pad_above, below: pad_below)[
-        #text(upper(name), weight: "bold", size: font_size, fill: text_color, tracking: letter_spacing)
+        #text(upper(name), weight: "bold", size: font_size, fill: font_color, tracking: letter_spacing)
     ]
 }
 
@@ -78,7 +78,7 @@
 /// - end (string): Date on which you ended with the position.
 /// - organization (string): Organization within which you held the position.
 /// - location (string): Location from which you worked for the position.
-/// - small_text_size (length | text.size): Size to give de-emphasized text elements.
+/// - small_font_size (length | text.size): Size to give de-emphasized text elements.
 /// - pad_above (auto | fraction | length | relative): Space to insert above position block.
 /// - pad_between (auto | fraction | length | relative): Space to insert between lines in position block.
 /// - pad_below (auto | fraction | length | relative): Space to insert below position block.
@@ -88,7 +88,7 @@
     end: "20xx",
     organization: "Organization name",
     location: "City, country",
-    small_text_size: 9pt,
+    small_font_size: 9pt,
     pad_above: 1.1em,
     pad_between: 0.5em,
     pad_below: 0.7em,
@@ -105,7 +105,7 @@
         #grid(
             columns: (1fr, auto),
             align: (left, right),
-            text(organization, weight: "regular"), text(location, style: "normal", size: small_text_size),
+            text(organization, weight: "regular"), text(location, style: "normal", size: small_font_size),
         )
     ]
 }
@@ -117,7 +117,7 @@
 /// - end (string): Date on which you ended with the position.
 /// - organization (string): Organization within which you held the position.
 /// - location (string): Location from which you worked for the position.
-/// - small_text_size (length | text.size): Size to give de-emphasized text elements.
+/// - small_font_size (length | text.size): Size to give de-emphasized text elements.
 /// - pad_above (auto | fraction | length | relative): Space to insert above position block.
 /// - pad_between (auto | fraction | length | relative): Space to insert between lines in position block.
 /// - pad_below (auto | fraction | length | relative): Space to insert below position block.
@@ -127,7 +127,7 @@
     end: "20xx",
     organization: "Organization name",
     location: "City, country",
-    small_text_size: 9pt,
+    small_font_size: 9pt,
     pad_above: 1.1em,
     pad_between: 0.5em,
     pad_below: 0.8em,
@@ -138,7 +138,7 @@
     block(above: pad_between)[#text(date_range)]
     if (location != "") {
         block(above: pad_between)[
-            #text(location, style: "normal", size: small_text_size)
+            #text(location, style: "normal", size: small_font_size)
         ]
     }
 }
@@ -152,12 +152,12 @@
 /// - pad_between (auto | fraction | length | relative): Space to insert between adjacent bullet points.
 #let entry_bullet(
     item,
-    font_size: 9.5pt,
-    text_color: rgb("#4c525b"),
+    font_size: 0.95em,
+    font_color: rgb("#4c525b"),
     leading: 0.6em,
     pad_between: 0.8em,
 ) = {
-    set text(style: "normal", size: font_size, fill: text_color)
+    set text(style: "normal", size: font_size, fill: font_color)
     set par(leading: leading)
     block(below: pad_between)[#list(item)]
 }
@@ -169,10 +169,7 @@
 /// - end (string): End date of project.
 /// - role (string): Role you have with project.
 /// - website (string): Website of project.
-/// - small_text_size (length | text.size): Size to give de-emphasized text elements.
-/// - light_text_color (color): Color to use for de-emphasized text.
 /// - pad_above (auto | fraction | length | relative): Space to insert above project block.
-/// - pad_between_lines (auto | fraction | length | relative): Space to insert between lines in project block.
 /// - pad_below (auto | fraction | length | relative): Space to insert below project block.
 #let project(
     name: "Position title",
@@ -180,8 +177,6 @@
     end: "20xx",
     role: "",
     website: "website.com",
-    small_text_size: 9pt,
-    light_text_color: rgb("#393f46"),
     pad_above: 1em,
     pad_below: 0.6em,
 ) = {
@@ -216,8 +211,8 @@
 /// - phone (string): Phone number of reference contact.
 /// - pad_between_lines (auto | fraction | length | relative): Space to insert between lines in the reference block.
 /// - pad_below (auto | fraction | length | relative): Space to insert above reference block.
-/// - small_text_size (length | text.size): Size to give de-emphasized text elements.
-/// - light_text_color (color): Color to give de-emphasized text elements.
+/// - small_font_size (length | text.size): Size to give de-emphasized text elements.
+/// - light_font_color (color): Color to give de-emphasized text elements.
 #let reference(
     name: "Contact Name",
     position: "Position title",
@@ -226,24 +221,24 @@
     phone: "+1 (123) 456-7890",
     pad_between_lines: 0.7em,
     pad_above: 1em,
-    small_text_size: 9pt,
-    light_text_color: rgb("#393f46"),
+    small_font_size: 0.9em,
+    light_font_color: rgb("#393f46"),
 ) = {
     block(above: pad_above, below: pad_between_lines)[#text(name)]
     block(below: pad_between_lines)[
-        #text(organization, style: "italic", size: small_text_size)
+        #text(organization, style: "italic", size: small_font_size)
     ]
     block(below: pad_between_lines)[
-        #text(position, weight: "regular", size: small_text_size, fill: light_text_color)
+        #text(position, weight: "regular", size: small_font_size, fill: light_font_color)
     ]
     if (email != "") {
         block(below: pad_between_lines)[
-            #text(email, weight: "regular", size: small_text_size)
+            #text(email, weight: "regular", size: small_font_size)
         ]
     }
     if (phone != "") {
         block(below: pad_between_lines)[
-            #text(phone, weight: "regular", size: small_text_size, fill: light_text_color)
+            #text(phone, weight: "regular", size: small_font_size, fill: light_font_color)
         ]
     }
 }
@@ -263,19 +258,14 @@
 /// - phone (string): Your phone number.
 /// - email (string | link): Your email address. May be plain text or a `link()`.
 /// - website (string | link): Your website URL. May be plain text or a `link()`.
-/// - left_content (content): Content to display in the left main column.
-/// - right_content (content): Content to display in the right main column.
 /// - page_size (string): Page size.
 /// - page_margin (length | margin): Page margin width.
 /// - font_family (array | str | text.font): Font family for all text.
-/// - main_font_size (length | text.size):Size of body text.
+/// - base_font_size (length | text.size):Size of body text.
 /// - heading_font_size (length | text.size): Size for section heading text.
-/// - base_text_color (length | text.size): Color of basic text elements.
-/// - heading_text_color (color): Color of section heading and name text.
-/// - hyperlink_text_color (color): Color of hyperlinks.
-/// - left_column_width (fraction): Width of the left column.
-/// - right_column_width (fraction):  Width of the right column.
-/// - column_gutter_width (array | auto | length | type): Width of the gutter between the left and right columns.
+/// - base_font_color (length | text.size): Color of basic text elements.
+/// - heading_font_color (color): Color of section heading and name text.
+/// - hyperlink_font_color (color): Color of hyperlinks.
 #let clean_cv(
     name: "Your Name",
     location: "City, Country",
@@ -285,27 +275,27 @@
     page_size: "us-letter",
     page_margin: 0.5in,
     font_family: "Fira Sans",
-    main_font_size: 10pt,
-    heading_font_size: 14pt,
-    base_text_color: rgb("#1f2328"),
-    heading_text_color: rgb("#1e496d"),
-    hyperlink_text_color: rgb("#0969da"),
+    base_font_size: 10pt,
+    heading_font_size: 1.1em,
+    base_font_color: rgb("#1f2328"),
+    heading_font_color: rgb("#1e496d"),
+    hyperlink_font_color: rgb("#0969da"),
     body,
 ) = {
     set page(paper: page_size, margin: page_margin)
-    set text(font: font_family, size: main_font_size, fill: base_text_color)
+    set text(font: font_family, size: base_font_size, fill: base_font_color)
     show link: x => {
-        set text(fill: hyperlink_text_color)
+        set text(fill: hyperlink_font_color)
         underline(x)
     }
     show heading: title => [
-        #set text(size: heading_font_size, weight: "bold", fill: heading_text_color)
+        #set text(size: heading_font_size, weight: "bold", fill: heading_font_color)
         #block(smallcaps(title.body), above: 1.2em, below: 0.4em)
         #block(above: 0em, below: 0.6em)[
             #line(length: 100%, stroke: (paint: rgb("#888888"), thickness: 0.5pt))
         ]
     ]
-    name_block(name: name, text_color: heading_text_color)
+    name_block(name: name, font_color: heading_font_color)
     contact_block(
         location: location,
         phone: phone,
