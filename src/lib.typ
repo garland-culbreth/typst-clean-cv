@@ -166,10 +166,11 @@
     font_color: rgb("#4c525b"),
     leading: 0.6em,
     pad_between: 0.8em,
+    pad_left: 0.5em,
 ) = {
     set text(style: "normal", size: font_size, fill: font_color)
     set par(leading: leading)
-    block(below: pad_between)[#list(item)]
+    block(below: pad_between)[#list(item, indent: pad_left)]
 }
 
 /// Render a formatted block for a project you've worked on.
