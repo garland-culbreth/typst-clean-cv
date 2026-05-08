@@ -93,11 +93,15 @@
 
 = Skills
 
-*Languages*: Python (8 yrs) | Rust (2 yrs) | SQL (5 yrs)
-
-*Knowledge*: Skill one | Skill two | Skill three
-
-*Technical*: Skill one | Skill two | Skill three
+#skill_block(title: "Languages")[
+    #skill_level(skill: "Python", level: "8 yrs"), #skill_level(skill: "Rust", level: "2 yrs"), #skill_level(skill: "SQL", level: "5 yrs")
+]
+#skill_block(title: "Knowledge")[
+    Skill one, Skill two, Skill three
+]
+#skill_block(title: "Technical")[
+    Skill one, Skill two, Skill three
+]
 
 = Awards
 

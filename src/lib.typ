@@ -55,6 +55,19 @@
     block(above: pad_above, below: 0.5em)[#text(contacts)]
 }
 
+#let skill_block(
+    body,
+    title: "",
+    hanging_indent: 0.15fr
+) = {
+    grid(
+        columns: (hanging_indent, 1fr),
+        align: (left, left),
+        text(title, weight: "bold"),
+        body
+    )
+}
+
 /// Render a skill item with a level, such as years of experience.
 ///
 /// - name (string): Skill name.
@@ -63,13 +76,10 @@
 #let skill_level(
     skill: "Name",
     level: "1 yr",
-    sep: "::",
+    sep: ": ",
 ) = {
-    block(above: 0em, below: 0.5em)[
-        #text(skill, weight: "bold")
-        #text(sep, weight: "bold")
-        #text(level, weight: "regular")
-    ]
+    let skill_level = (skill, level)
+    skill_level.join(sep)
 }
 
 /// Render a formatted entry, such as a job position.
