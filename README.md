@@ -8,9 +8,7 @@ A [typst](https://typst.app/) template for a clean curriculum vitae or resume.
 
 The easiest way to get started is to edit the template file. It contains examples of how to call each of the macros and fill them in with information.
 
-### Filling columns
-
-Content for each column is entered as normal within the `left_content` and `right_content` square-bracket `[]` contexts. For example, this snippet:
+As a simple example:
 
 ```typst
 #import "/src/lib.typ": *
