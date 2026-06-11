@@ -58,7 +58,7 @@ Content for each column is entered as normal within the `left_content` and `righ
 #entry_bullet(lorem(10))
 ```
 
-will produce a document with an experience section with one entry, an educations section with one entry, and a projects section with one entry.
+will produce a document with an experience section with one entry, an education section with one entry, and a projects section with one entry.
 
 See also `templates/main.typ` for a more complete example.
 
